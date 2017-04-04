@@ -28,7 +28,11 @@ def success_is_relative():
     # this depends on excecution context. Take a look at your CWD and remember
     # that it changes.
     # print(path, CWD)
-    pass
+    file_path = "week1/pySuccessMessage.json"
+    success_open = open(file_path, mode="r")
+    contents = success_open.read()
+    contents = contents.strip()
+    return contents
 
 
 def get_some_details():
@@ -47,12 +51,11 @@ def get_some_details():
          dictionary, you'll need integer indeces for lists, and named keys for
          dictionaries.
     """
-    json_data = open(LOCAL + "/lazyduck.json").read()
-
-    data = json.loads(json_data)
-    return {"lastName":       None,
-            "password":       None,
-            "postcodePlusID": None
+    file_data = open("week4/lazyduck.json").read()
+    data = json.loads(file_data)
+    return {"lastName":     last,
+            "password":      password,
+            "postcodePlusID": postcode
             }
 
 
